@@ -70,8 +70,8 @@ class ActionModule(ActionBase):
         result.update(self._low_level_execute_command(cmd=async_cmd))
 
         # clean up after
-        if tmp and "tmp" in tmp and not C.DEFAULT_KEEP_REMOTE_FILES:
-            self._remove_tmp_path(tmp)
+        #if tmp and "tmp" in tmp and not C.DEFAULT_KEEP_REMOTE_FILES:
+        #    self._remove_tmp_path(tmp)
 
         result['changed'] = True
 
