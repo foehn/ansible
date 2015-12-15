@@ -537,10 +537,10 @@ class Runner(object):
             raise errors.AnsibleError("module is missing interpreter line")
 
         rm_tmp = None
-        if "tmp" in tmp and not C.DEFAULT_KEEP_REMOTE_FILES and not persist_files and delete_remote_tmp:
-            if not self.become or self.become_user == 'root':
-                # not sudoing or sudoing to root, so can cleanup files in the same step
-                rm_tmp = tmp
+        # if "tmp" in tmp and not C.DEFAULT_KEEP_REMOTE_FILES and not persist_files and delete_remote_tmp:
+        #     if not self.become or self.become_user == 'root':
+        #         # not sudoing or sudoing to root, so can cleanup files in the same step
+        #         rm_tmp = tmp
 
         cmd = conn.shell.build_module_command(environment_string, shebang, cmd, rm_tmp)
         cmd = cmd.strip()
